@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "perception-cascade"
+version = "0.1.0"
+description = "Tiered perception daemon for time-series frames: racehorse/scribe/analyst loops with a gaze attention channel. Local models via Ollama."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Proprietary" }
+dependencies = []  # stdlib only — Ollama is an HTTP endpoint, not a package
+
+[project.scripts]
+perception-cascade = "perception_cascade.daemon:main"
+
+[tool.setuptools.packages.find]
+include = ["perception_cascade*"]
